@@ -1,4 +1,5 @@
 $main-color: #ffdc00;
+$main-color-shade: #e6c600;
 $font-main: sans-serif;
 $font-serif: "Satisfy", cursive;
 $font-color-light: #fff;
@@ -11,14 +12,28 @@ $font-color-light: #fff;
 }
 body {
   font-family: sans-serif;
-  background-color: black;
 }
 .box {
   width: 1140px;
   margin: 48px auto;
 }
-/*navigation styles*/
+.btn {
+  text-decoration: none;
+  color: $font-color-light;
+  background-color: $main-color;
+  padding: 18px 48px;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover {
+  background-color: $main-color-shade;
+}
+/*navigation*/
 .main-nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,4 +72,37 @@ body {
   font-size: 24px;
   font-family: $font-serif;
   color: $main-color;
+}
+/*hero*/
+.hero {
+  position: relative;
+  text-align: center;
+  color: $font-color-light;
+}
+.hero-image {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/images/hero-img.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.hero-subtitle {
+  font-size: 48px;
+  font-family: $font-serif;
+  margin-bottom: 24px;
+}
+.hero-text {
+  h1 {
+    font-size: 72px;
+    margin-bottom: 48px;
+  }
 }
