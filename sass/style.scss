@@ -3,6 +3,7 @@ $main-color-shade: #e6c600;
 $font-main: sans-serif;
 $font-serif: "Satisfy", cursive;
 $font-color-light: #fff;
+$font-color-grey: #999;
 /*global*/
 *,
 *::after,
@@ -12,6 +13,7 @@ $font-color-light: #fff;
 }
 body {
   font-family: sans-serif;
+  position: relative;
 }
 .box {
   width: 1140px;
@@ -28,9 +30,18 @@ body {
 .btn:hover {
   background-color: $main-color-shade;
 }
+.section-title-box {
+  text-align: center;
+}
+.section-title {
+  font-size: 32px;
+}
+.section-subtitle {
+  color: $font-color-grey;
+}
 /*navigation*/
 .main-nav {
-  position: fixed;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9;
@@ -104,5 +115,37 @@ body {
   h1 {
     font-size: 72px;
     margin-bottom: 48px;
+  }
+}
+/*services*/
+.services-list {
+  padding: 0;
+  gap: 48px;
+  text-align: center;
+  margin-top: 96px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+.services-item {
+  i {
+    margin: 0 auto;
+    width: 96px;
+    height: 96px;
+    font-size: 32px;
+    color: $main-color;
+    border: 5px solid $main-color;
+    border-radius: 50%;
+    padding: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.services-item {
+  p {
+    margin-top: 16px;
+    color: $font-color-grey;
   }
 }
