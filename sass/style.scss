@@ -1,5 +1,6 @@
 $main-color: #ffdc00;
 $main-color-shade: #e6c600;
+$cololr-light-grey: #eee;
 $font-main: sans-serif;
 $font-serif: "Satisfy", cursive;
 $font-color-light: #fff;
@@ -148,4 +149,37 @@ body {
     margin-top: 16px;
     color: $font-color-grey;
   }
+}
+/*portfolio*/
+.portfolio {
+  padding: 96px 0;
+  background-color: $cololr-light-grey;
+}
+.portfolio {
+  .section-title-box {
+    margin-bottom: 48px;
+  }
+}
+.portfolio-projects {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.portfolio-project {
+  text-align: center;
+  background-color: $font-color-light;
+  overflow: hidden;
+}
+.portfolio-project-image {
+  width: 100%;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+.portfolio-project-subtitle {
+  font-family: $font-serif;
+  color: $font-color-grey;
+  margin-bottom: 24px;
+}
+.portfolio-project:hover .portfolio-project-image {
+  transform: scale(1.1);
 }
