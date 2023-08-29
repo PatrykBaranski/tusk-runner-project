@@ -40,6 +40,9 @@ body {
 .section-subtitle {
   color: $font-color-grey;
 }
+a {
+  text-decoration: none;
+}
 /*navigation*/
 .main-nav {
   position: absolute;
@@ -182,4 +185,32 @@ body {
 }
 .portfolio-project:hover .portfolio-project-image {
   transform: scale(1.1);
+}
+/*footer*/
+.footer-box {
+  width: 58%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.copyright-box {
+  color: $font-color-grey;
+}
+.socials {
+  display: flex;
+  gap: 16px;
+}
+.social {
+  background-color: #000;
+  width: 36px;
+  height: 36px;
+  color: $font-color-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+.social:hover {
+  transform: scale(1.2);
 }
