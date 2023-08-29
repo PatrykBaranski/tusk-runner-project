@@ -15,9 +15,10 @@ $font-color-grey: #999;
 body {
   font-family: sans-serif;
   position: relative;
+  overflow-x: hidden;
 }
 .box {
-  width: 1140px;
+  max-width: 1140px;
   margin: 48px auto;
 }
 .btn {
@@ -47,11 +48,13 @@ a {
 .main-nav {
   position: absolute;
   left: 50%;
+  top: 48px;
   transform: translateX(-50%);
   z-index: 9;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 400px;
 }
 .nav-list {
   list-style: none;
@@ -63,7 +66,7 @@ a {
 }
 .nav-item {
   a:link,
-  a:active {
+  a:visited {
     text-decoration: none;
     color: $font-color-light;
     font-size: 14px;
@@ -87,6 +90,9 @@ a {
   font-size: 24px;
   font-family: $font-serif;
   color: $main-color;
+}
+.hamburger {
+  display: none;
 }
 /*hero*/
 .hero {
@@ -213,4 +219,73 @@ a {
 }
 .social:hover {
   transform: scale(1.2);
+}
+/*media queries*/
+@media (max-width: 800px) {
+  .main-nav {
+    width: 100%;
+    top: 0;
+    flex-direction: column;
+    position: fixed;
+    gap: 0;
+    background-color: $font-color-light;
+    padding: 24px 48px;
+  }
+  .logo-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .hamburger {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hamburger .bar {
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+  }
+  .active .hamburger {
+    justify-content: center;
+  }
+  .active .bar:last-child {
+    transform: translateY(-2px) rotate(-45deg);
+  }
+  .active .bar:first-child {
+    transform: rotate(45deg);
+  }
+
+  .active .bar:nth-child(2) {
+    display: none;
+  }
+  .nav-list {
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    top: 60px;
+    flex-direction: column;
+    position: fixed;
+    gap: 24px;
+    background-color: $font-color-light;
+    padding: 24px 48px;
+    text-align: center;
+    left: -100%;
+  }
+  .active .nav-list {
+    left: 0;
+  }
+  .nav-item {
+    a:link,
+    a:visited {
+      color: #000;
+    }
+  }
+  .nav-item::after {
+    display: none;
+  }
 }
